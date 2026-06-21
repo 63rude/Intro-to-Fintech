@@ -1,0 +1,4 @@
+2026-06-21 23:35:58,432 | INFO | Logging to C:\Users\levyp\Desktop\Coding\Uni\Intro-to-Fintech\project_2_competitive_news_spillovers\outputs\logs\normalize_news_20260621_233558.log
+2026-06-21 23:35:58,432 | INFO | Normalizing raw news from C:\Users\levyp\Desktop\Coding\Uni\Intro-to-Fintech\project_2_competitive_news_spillovers\data\raw\news\_sample_validation.jsonl into C:\Users\levyp\Desktop\Coding\Uni\Intro-to-Fintech\project_2_competitive_news_spillovers\data\interim\_sample_validation.csv
+2026-06-21 23:35:58,432 | INFO | Reading raw file: C:\Users\levyp\Desktop\Coding\Uni\Intro-to-Fintech\project_2_competitive_news_spillovers\data\raw\news\_sample_validation.jsonl
+2026-06-21 23:35:58,436 | INFO | Wrote 2 normalized rows to C:\Users\levyp\Desktop\Coding\Uni\Intro-to-Fintech\project_2_competitive_news_spillovers\data\interim\_sample_validation.csv (skipped 0 exact duplicates)

@@ -1,0 +1,54 @@
+project_name: competitive_news_spillovers
+version: 0.1
+notes:
+  - Initial peer groups for Project 2 feasibility work.
+  - These groups can be narrowed after checking news coverage and overlap.
+
+industries:
+  ev_autos:
+    description: Electric vehicle and legacy auto firms with visible EV exposure.
+    tickers:
+      - TSLA
+      - GM
+      - F
+      - RIVN
+  semiconductors:
+    description: Large US semiconductor firms with overlapping product and demand exposure.
+    tickers:
+      - NVDA
+      - AMD
+      - INTC
+      - QCOM
+      - AVGO
+  airlines:
+    description: Major US passenger airlines with direct competitive overlap.
+    tickers:
+      - DAL
+      - UAL
+      - AAL
+      - LUV
+  banks:
+    description: Large diversified US banks with similar macro and regulatory exposure.
+    tickers:
+      - JPM
+      - BAC
+      - C
+      - WFC
+  big_tech:
+    description: Mega-cap platform and software firms with broad competitive interaction.
+    tickers:
+      - AAPL
+      - MSFT
+      - GOOGL
+      - META
+      - AMZN
+
+benchmark_tickers:
+  market: SPY
+
+candidate_outcomes:
+  - competitor_next_day_return
+  - competitor_next_day_abnormal_return
+  - competitor_3day_abnormal_return
+  - competitor_volume_change
+  - competitor_absolute_return
