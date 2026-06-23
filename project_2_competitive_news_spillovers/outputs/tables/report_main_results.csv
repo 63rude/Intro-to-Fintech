@@ -1,0 +1,6 @@
+sample_definition,expected_competitor_effect,panel_rows,unique_articles,competitor_abret_spy_t1_nonmissing,competitor_abret_spy_t1_mean,competitor_abret_spy_t1_std,competitor_car_abret_spy_0_1_nonmissing,competitor_car_abret_spy_0_1_mean,competitor_car_abret_spy_0_1_std,competitor_car_abret_spy_1_3_nonmissing,competitor_car_abret_spy_1_3_mean,competitor_car_abret_spy_1_3_std
+broad,same_direction_contagion,3093,575,3020,0.002654,0.022552,3075,0.0048,0.035789,3020,0.005696,0.039214
+broad,opposite_direction_competition,39,8,39,0.007229,0.047664,39,0.012767,0.055012,39,0.008099,0.043214
+broad,positive_for_competitors,80,15,60,-7.3e-05,0.017838,60,0.004593,0.034486,60,0.003767,0.042822
+broad,negative_for_competitors,113,20,113,-0.000857,0.02208,113,-0.00056,0.033525,113,-0.00473,0.039765
+broad,neutral_or_no_clear_effect,1219,312,1201,0.001189,0.02151,1208,0.002166,0.030515,1201,0.001746,0.038051

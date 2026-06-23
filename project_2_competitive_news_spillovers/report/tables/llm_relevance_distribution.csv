@@ -1,0 +1,9 @@
+level,category,count,share
+is_relevant,Relevant,930,0.744
+is_relevant,Not relevant,320,0.256
+relevance_type,target_company_news,387,0.3096
+relevance_type,not_relevant,320,0.256
+relevance_type,market_roundup_but_relevant,252,0.2016
+relevance_type,competitor_company_news,122,0.0976
+relevance_type,industry_news,106,0.0848
+relevance_type,macro_policy_news,63,0.0504

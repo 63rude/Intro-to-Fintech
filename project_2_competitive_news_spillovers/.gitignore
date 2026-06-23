@@ -1,0 +1,11 @@
+.env
+__pycache__/
+*.pyc
+
+outputs/logs/*.log
+
+data/raw/news/*.jsonl
+data/raw/news/download_checkpoint.json
+data/interim/*.csv
+data/processed/*
+!data/processed/.gitkeep

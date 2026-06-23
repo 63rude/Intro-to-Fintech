@@ -1,0 +1,8 @@
+step_order,step,unit,count,note
+1,Successful LLM classifications,articles,1250,Rows in the final successful LLM classification file.
+2,Relevant classified articles,articles,930,Articles marked relevant by the LLM.
+3,Unique relevant articles used in the event panel,articles,930,Relevant articles that map to at least one tracked source ticker.
+4,Unique article-source events,article_source_events,1351,Unique `article_id + source_ticker` events before competitor expansion.
+5,Broad event-panel sample,panel_rows,4544,All relevant competitor rows.
+6,Strict event-panel sample,panel_rows,2973,Broad sample excluding `market_roundup_but_relevant`.
+7,Very strict event-panel sample,panel_rows,2273,Strict sample with `materiality >= 3` and `confidence >= 4`.

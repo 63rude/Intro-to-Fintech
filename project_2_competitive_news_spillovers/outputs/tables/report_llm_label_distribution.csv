@@ -1,0 +1,7 @@
+relevance_type,article_count,relevant_article_count,share_of_classified_articles,share_of_relevant_articles
+not_relevant,320,0,0.256,0.0
+target_company_news,387,387,0.3096,0.416129
+competitor_company_news,122,122,0.0976,0.131183
+industry_news,106,106,0.0848,0.113978
+macro_policy_news,63,63,0.0504,0.067742
+market_roundup_but_relevant,252,252,0.2016,0.270968

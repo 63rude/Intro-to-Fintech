@@ -1,0 +1,10 @@
+step_order,step,unit,count,note
+1,Price rows fetched,rows,6360,Stored yfinance daily price rows.
+2,Tickers with price data,tickers,24,Competitor-group firms plus SPY and QQQ.
+3,Rows in daily returns file,rows,6360,Daily simple returns plus SPY- and QQQ-adjusted abnormal returns.
+4,Relevant classified articles entering panel,articles,930,Successful LLM classifications with is_relevant == true.
+5,Unique article-source events,article_source_events,1351,Unique article_id x source_ticker events before competitor expansion.
+6,Competitor event-panel rows,panel_rows,4544,Rows at the article_id x source_ticker x competitor_ticker level.
+7,Broad sample rows,panel_rows,4544,All event-panel rows with is_relevant == true.
+8,Strict sample rows,panel_rows,2973,Broad sample excluding market_roundup_but_relevant.
+9,Very strict sample rows,panel_rows,2273,Strict sample with materiality >= 3 and confidence >= 4.

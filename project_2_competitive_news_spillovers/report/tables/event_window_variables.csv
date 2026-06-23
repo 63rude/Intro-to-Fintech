@@ -1,0 +1,4 @@
+variable,window_label,formula_text,interpretation
+competitor_abret_spy_t1,t1,AbRet_t1,Next-trading-day competitor abnormal return relative to SPY.
+competitor_car_abret_spy_0_1,"CAR(0,1)",AbRet_t0 + AbRet_t1,Event day plus next-trading-day competitor abnormal return relative to SPY.
+competitor_car_abret_spy_1_3,"CAR(1,3)",AbRet_t1 + AbRet_t2 + AbRet_t3,Cumulative abnormal return from one to three trading days after the event.

@@ -71,10 +71,144 @@ Minimum feasibility requirements:
 
 - `project_plan.md`: step-by-step execution plan
 - `config/competitor_groups.yaml`: initial firm universe by industry
-- `prompts/news_classification_prompt.md`: draft LLM labeling prompt
-- `scripts/`: placeholder scripts for data collection, classification, and analysis
+- `prompts/news_spillover_classification_prompt.md`: spillover-focused LLM labeling prompt
+- `scripts/`: data collection, sampling, classification, and analysis scripts
 - `notebooks/`: staged notebooks for feasibility, labeling tests, and event-study work
 - `report/`: outline and report drafting space
+
+## LLM Pilot Workflow
+
+The LLM workflow is designed to stay cost-safe and resumable:
+
+- classify unique articles only, not ticker duplicates;
+- stratify first so pilot samples cover different news types;
+- classify balanced samples before any larger run;
+- append results incrementally so reruns skip completed `article_id` values.
+
+### Required LLM environment variables
+
+Add these to the project `.env` file:
+
+```text
+OPENAI_API_KEY=your_key_here
+OPENAI_MODEL=gpt-5.4-mini
+```
+
+Optional cost-estimate variables for the classifier:
+
+```text
+OPENAI_INPUT_COST_PER_1M_USD=
+OPENAI_OUTPUT_COST_PER_1M_USD=
+```
+
+### Build strata and pilot sample
+
+```bash
+python scripts/build_llm_strata.py --mode hybrid --min-stratum-size 50
+python scripts/build_llm_sample.py --per-stratum 20 --max-total-rows 300 --seed 42
+```
+
+This creates:
+
+- `data/interim/news_articles_with_strata.csv`
+- `outputs/tables/llm_strata_summary.csv`
+- `outputs/samples/llm_strata_sample_200.csv`
+- `data/processed/llm_input/llm_input_sample_n20_per_stratum_max300.csv`
+
+Notes:
+
+- `build_llm_strata.py` supports `--mode heuristic` and `--mode hybrid`.
+- The number of final strata is data-driven rather than fixed.
+- Small combined strata are collapsed with `--min-stratum-size`.
+- `build_llm_sample.py` samples from every available final stratum and can cap the total with `--max-total-rows`.
+
+### Run the sample classifier
+
+```bash
+python scripts/classify_news_with_openai.py --input data/processed/llm_input/llm_input_sample_n20_per_stratum_max300.csv --output data/processed/llm_output/llm_classifications_sample_n20_per_stratum.csv --concurrency 12
+```
+
+The classifier also writes raw API responses to:
+
+- `data/processed/llm_output/raw_responses_sample_n20_per_stratum.jsonl`
+
+Useful options:
+
+- `--limit 3` for a smoke test
+- `--concurrency 12` or higher to use parallel requests instead of serial classification
+- `--model ...` to override `OPENAI_MODEL`
+- `--structured-output auto|on|off` if the chosen model handles JSON schema differently
+
+### Inspect the classified sample
+
+```bash
+python scripts/inspect_llm_classifications.py --input data/processed/llm_output/llm_classifications_sample_n20_per_stratum.csv
+```
+
+This creates:
+
+- `outputs/tables/llm_classification_summary.csv`
+- `outputs/samples/llm_relevant_sample_100.csv`
+- `outputs/samples/llm_not_relevant_sample_100.csv`
+- `outputs/samples/llm_low_confidence_sample_100.csv`
+
+## Event Study Workflow
+
+The current event-study stage uses the completed classified sample:
+
+- `data/processed/llm_output/llm_classifications_sample_n50_per_stratum_max1500_final.csv`
+
+This stage:
+
+- downloads daily prices for all project tickers plus `SPY` and `QQQ`;
+- builds daily simple returns, log returns, and simple abnormal returns versus `SPY` and `QQQ`;
+- links relevant classified news to source tickers and same-group competitors;
+- maps news dates to the next available trading day;
+- constructs competitor and source return windows;
+- exports descriptive tables, figures, regressions, and a written analysis summary.
+
+### Price and event-study commands
+
+```bash
+python scripts/fetch_prices.py
+python scripts/build_daily_returns.py
+python scripts/build_event_panel.py
+python scripts/run_event_analysis.py
+```
+
+### Main generated files
+
+- Raw prices:
+  - `data/raw/prices/yfinance_daily_prices.csv`
+- Daily returns:
+  - `data/interim/daily_returns.csv`
+- Event panel:
+  - `data/processed/news_competitor_event_panel.csv`
+- Tables:
+  - `outputs/tables/llm_label_distribution.csv`
+  - `outputs/tables/event_panel_counts.csv`
+  - `outputs/tables/event_counts_by_industry.csv`
+  - `outputs/tables/event_counts_by_relevance_type.csv`
+  - `outputs/tables/event_counts_by_event_type.csv`
+  - `outputs/tables/event_counts_by_sentiment.csv`
+  - `outputs/tables/mean_returns_by_label.csv`
+  - `outputs/tables/regression_results_main.csv`
+  - `outputs/tables/regression_results_strict.csv`
+- Figures:
+  - `outputs/figures/relevance_distribution.png`
+  - `outputs/figures/event_counts_by_industry.png`
+  - `outputs/figures/mean_competitor_abret_by_expected_effect.png`
+  - `outputs/figures/mean_competitor_abret_by_sentiment.png`
+- Notes:
+  - `outputs/analysis/analysis_summary.md`
+
+### Event panel definitions
+
+- One panel row is `article_id x source_ticker x competitor_ticker`.
+- `sample_broad` keeps all relevant classified events.
+- `sample_strict` removes `market_roundup_but_relevant`.
+- `sample_very_strict` further requires `materiality >= 3` and `confidence >= 4`.
+- `competitor_abret_spy_t1` is the safest primary return outcome because exact publication time is unavailable.
 
 ## News Data Collection
 

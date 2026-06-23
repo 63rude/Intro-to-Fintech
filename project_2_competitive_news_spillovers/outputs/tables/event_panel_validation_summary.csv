@@ -1,0 +1,48 @@
+section,item,subgroup,status,value,detail
+check,source_ticker_not_equal_competitor_ticker,,pass,0,Rows where `source_ticker == competitor_ticker`.
+check,source_and_competitor_same_config_group,,pass,0,Rows where source/competitor group assignments disagree with `config/competitor_groups.yaml`.
+check,broad_25_strata_only,,pass,0,Panel strata count=25; allowed strata count from final LLM file=25.
+check,date_window_ordering,,warn,180,Rows with true ordering violations among fully observed dates=0; rows missing one or more window dates=180.
+check,t1_is_next_trading_day_after_event_trade_date,,pass,0,Rows where `t1_date` is not exactly the next SPY trading day after `event_trade_date`.
+check,abnormal_car_0_1_identity,,fail,62,Rows where `competitor_car_abret_spy_0_1` does not equal `competitor_abret_spy_t0 + competitor_abret_spy_t1`.
+check,abnormal_car_1_3_identity,,fail,69,Rows where `competitor_car_abret_spy_1_3` does not equal `competitor_abret_spy_t1 + t2 + t3`.
+check,raw_car_columns_identity,,fail,131,"Rows failing raw CAR identities: 0_1=62, 1_3=69."
+check,duplicate_article_source_competitor_rows,,pass,0,Duplicate rows by `article_id + source_ticker + competitor_ticker`.
+check,sample_flag_consistency,,pass,0,"Flag mismatches: broad=0, strict=0, very_strict=0."
+sample_count,sample_broad_rows,,info,4544,All relevant rows in the panel.
+sample_count,sample_strict_rows,,info,2973,Rows excluding `market_roundup_but_relevant`.
+sample_count,sample_very_strict_rows,,info,2273,Strict rows with `materiality >= 3` and `confidence >= 4`.
+missing_by_ticker,AMZN,all_competitor_outcomes,,136,Total missing competitor outcome values across 12 columns.
+missing_by_ticker,GOOGL,all_competitor_outcomes,,128,Total missing competitor outcome values across 12 columns.
+missing_by_ticker,MSFT,all_competitor_outcomes,,120,Total missing competitor outcome values across 12 columns.
+missing_by_ticker,QCOM,all_competitor_outcomes,,118,Total missing competitor outcome values across 12 columns.
+missing_by_ticker,AAPL,all_competitor_outcomes,,108,Total missing competitor outcome values across 12 columns.
+missing_by_ticker,AMD,all_competitor_outcomes,,106,Total missing competitor outcome values across 12 columns.
+missing_by_ticker,AVGO,all_competitor_outcomes,,104,Total missing competitor outcome values across 12 columns.
+missing_by_ticker,META,all_competitor_outcomes,,100,Total missing competitor outcome values across 12 columns.
+missing_by_ticker,INTC,all_competitor_outcomes,,86,Total missing competitor outcome values across 12 columns.
+missing_by_ticker,NVDA,all_competitor_outcomes,,58,Total missing competitor outcome values across 12 columns.
+missing_by_ticker,RIVN,all_competitor_outcomes,,38,Total missing competitor outcome values across 12 columns.
+missing_by_ticker,WFC,all_competitor_outcomes,,38,Total missing competitor outcome values across 12 columns.
+missing_by_ticker,C,all_competitor_outcomes,,30,Total missing competitor outcome values across 12 columns.
+missing_by_ticker,F,all_competitor_outcomes,,30,Total missing competitor outcome values across 12 columns.
+missing_by_ticker,BAC,all_competitor_outcomes,,24,Total missing competitor outcome values across 12 columns.
+missing_by_ticker,TSLA,all_competitor_outcomes,,24,Total missing competitor outcome values across 12 columns.
+missing_by_ticker,GM,all_competitor_outcomes,,22,Total missing competitor outcome values across 12 columns.
+missing_by_ticker,JPM,all_competitor_outcomes,,22,Total missing competitor outcome values across 12 columns.
+missing_by_ticker,AAL,all_competitor_outcomes,,2,Total missing competitor outcome values across 12 columns.
+missing_by_ticker,DAL,all_competitor_outcomes,,2,Total missing competitor outcome values across 12 columns.
+missing_by_ticker,UAL,all_competitor_outcomes,,2,Total missing competitor outcome values across 12 columns.
+missing_by_ticker,LUV,all_competitor_outcomes,,0,Total missing competitor outcome values across 12 columns.
+missing_by_outcome,competitor_abret_spy_t3,,,180,Missing values across all panel rows.
+missing_by_outcome,competitor_ret_t3,,,180,Missing values across all panel rows.
+missing_by_outcome,competitor_abret_spy_t2,,,149,Missing values across all panel rows.
+missing_by_outcome,competitor_ret_t2,,,149,Missing values across all panel rows.
+missing_by_outcome,competitor_abret_spy_t1,,,111,Missing values across all panel rows.
+missing_by_outcome,competitor_car_1_3,,,111,Missing values across all panel rows.
+missing_by_outcome,competitor_car_abret_spy_1_3,,,111,Missing values across all panel rows.
+missing_by_outcome,competitor_ret_t1,,,111,Missing values across all panel rows.
+missing_by_outcome,competitor_abret_spy_t0,,,49,Missing values across all panel rows.
+missing_by_outcome,competitor_car_0_1,,,49,Missing values across all panel rows.
+missing_by_outcome,competitor_car_abret_spy_0_1,,,49,Missing values across all panel rows.
+missing_by_outcome,competitor_ret_t0,,,49,Missing values across all panel rows.

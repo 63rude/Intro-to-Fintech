@@ -1,0 +1,7 @@
+sample_definition,outcome,model_family,term_label,coef,std_err,p_value,nobs,rsquared,cov_type
+broad,competitor_abret_spy_t1,relevance_type + primary_industry,industry_news,0.006186,0.002128,0.003643,4433,0.01227,cluster_article_id
+broad,competitor_abret_spy_t1,expected_competitor_effect,same_direction_contagion,0.003511,0.002794,0.208857,4433,0.001862,cluster_article_id
+broad,competitor_abret_spy_t1,expected_competitor_effect,opposite_direction_competition,0.008086,0.008747,0.355275,4433,0.001862,cluster_article_id
+broad,competitor_car_abret_spy_0_1,expected_competitor_effect,same_direction_contagion,0.005493,0.00391,0.160043,4495,0.005106,cluster_article_id
+broad,competitor_car_abret_spy_1_3,expected_competitor_effect,same_direction_contagion,0.01125,0.005426,0.038135,4433,0.00496,cluster_article_id
+broad,competitor_abret_spy_t1,relevance_type + primary_industry,banks_finance,-0.003586,0.00199,0.071553,4433,0.01227,cluster_article_id

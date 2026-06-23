@@ -1,0 +1,11 @@
+step_order,step,unit,count,note
+1,Normalized ticker-level news rows,rows,55094,Programmatically collected and normalized news rows before cleaning.
+2,Rows removed by conservative cleaning,rows,2556,Removed for missing summaries or summaries shorter than 30 characters.
+3,Cleaned ticker-level news rows,rows,52538,Rows retained after conservative technical cleaning.
+4,Unique articles,articles,38131,"Deduplicated primarily by URL, with title-date-publisher fallback."
+5,Article-ticker links,links,52538,Ticker linkage table used to map article-level classifications back to firms.
+6,Final broad strata,strata,25,Balanced sampling strata used only for LLM sample construction.
+7,Sampled classified dataset,articles,1250,Balanced sample of 50 articles from each final stratum.
+8,Successful LLM classifications,articles,1250,All sampled rows completed classification successfully.
+9,Not relevant classified articles,articles,320,Sampled classified articles labeled not relevant.
+10,Relevant classified articles,articles,930,Sampled classified articles labeled relevant.

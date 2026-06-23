@@ -1,0 +1,6 @@
+group_code,group_label,description,ticker_count,tickers
+ev_autos,autos/EV,Electric vehicle and legacy auto firms with visible EV exposure.,4,"TSLA, GM, F, RIVN"
+semiconductors,semiconductors/AI,Large US semiconductor firms with overlapping product and demand exposure.,5,"NVDA, AMD, INTC, QCOM, AVGO"
+airlines,airlines/travel,Major US passenger airlines with direct competitive overlap.,4,"DAL, UAL, AAL, LUV"
+banks,banks/finance,Large diversified US banks with similar macro and regulatory exposure.,4,"JPM, BAC, C, WFC"
+big_tech,big tech/cloud,Mega-cap platform and software firms with broad competitive interaction.,5,"AAPL, MSFT, GOOGL, META, AMZN"

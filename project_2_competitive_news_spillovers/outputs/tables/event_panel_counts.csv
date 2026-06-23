@@ -1,0 +1,9 @@
+metric,value,note
+panel_rows_total,4544,Total competitor event-panel rows.
+unique_articles,930,Relevant articles represented in the panel.
+unique_article_source_events,1351,Unique `article_id + source_ticker` events.
+unique_source_tickers,22,Distinct tracked source tickers appearing in the panel.
+unique_competitor_tickers,22,Distinct tracked competitor tickers appearing in the panel.
+sample_broad_rows,4544,Rows in the broad sample.
+sample_strict_rows,2973,Rows in the strict sample.
+sample_very_strict_rows,2273,Rows in the very strict sample.

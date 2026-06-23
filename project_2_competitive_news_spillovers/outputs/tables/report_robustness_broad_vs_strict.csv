@@ -1,0 +1,16 @@
+sample_definition,expected_competitor_effect,panel_rows,unique_articles,competitor_abret_spy_t1_nonmissing,competitor_abret_spy_t1_mean,competitor_abret_spy_t1_std,competitor_car_abret_spy_0_1_nonmissing,competitor_car_abret_spy_0_1_mean,competitor_car_abret_spy_0_1_std,competitor_car_abret_spy_1_3_nonmissing,competitor_car_abret_spy_1_3_mean,competitor_car_abret_spy_1_3_std
+broad,same_direction_contagion,3093,575,3020,0.002654,0.022552,3075,0.0048,0.035789,3020,0.005696,0.039214
+broad,opposite_direction_competition,39,8,39,0.007229,0.047664,39,0.012767,0.055012,39,0.008099,0.043214
+broad,positive_for_competitors,80,15,60,-7.3e-05,0.017838,60,0.004593,0.034486,60,0.003767,0.042822
+broad,negative_for_competitors,113,20,113,-0.000857,0.02208,113,-0.00056,0.033525,113,-0.00473,0.039765
+broad,neutral_or_no_clear_effect,1219,312,1201,0.001189,0.02151,1208,0.002166,0.030515,1201,0.001746,0.038051
+strict,same_direction_contagion,1760,370,1714,0.002832,0.023044,1745,0.003169,0.034815,1714,0.005673,0.038766
+strict,opposite_direction_competition,27,7,27,0.004473,0.056059,27,0.011028,0.062956,27,0.00526,0.050477
+strict,positive_for_competitors,54,12,54,0.001115,0.018193,54,0.00536,0.03614,54,0.002543,0.042179
+strict,negative_for_competitors,94,19,94,-0.002738,0.022986,94,-0.002036,0.03522,94,-0.008021,0.040278
+strict,neutral_or_no_clear_effect,1038,270,1020,0.000819,0.021011,1027,0.001999,0.0301,1020,0.002103,0.037107
+very_strict,same_direction_contagion,1635,342,1592,0.002752,0.023214,1620,0.003152,0.034897,1592,0.005836,0.038946
+very_strict,opposite_direction_competition,17,4,17,0.008528,0.069244,17,0.012782,0.076387,17,-0.003747,0.053917
+very_strict,positive_for_competitors,54,12,54,0.001115,0.018193,54,0.00536,0.03614,54,0.002543,0.042179
+very_strict,negative_for_competitors,79,17,79,-0.003746,0.024002,79,-0.002541,0.03621,79,-0.013064,0.03862
+very_strict,neutral_or_no_clear_effect,488,129,477,0.001099,0.022177,477,0.000115,0.031661,477,0.00397,0.037482
