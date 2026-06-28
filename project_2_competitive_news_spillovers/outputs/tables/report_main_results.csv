@@ -1,6 +1,7 @@
-sample_definition,expected_competitor_effect,panel_rows,unique_articles,competitor_abret_spy_t1_nonmissing,competitor_abret_spy_t1_mean,competitor_abret_spy_t1_std,competitor_car_abret_spy_0_1_nonmissing,competitor_car_abret_spy_0_1_mean,competitor_car_abret_spy_0_1_std,competitor_car_abret_spy_1_3_nonmissing,competitor_car_abret_spy_1_3_mean,competitor_car_abret_spy_1_3_std
-broad,same_direction_contagion,3093,575,3020,0.002654,0.022552,3075,0.0048,0.035789,3020,0.005696,0.039214
-broad,opposite_direction_competition,39,8,39,0.007229,0.047664,39,0.012767,0.055012,39,0.008099,0.043214
-broad,positive_for_competitors,80,15,60,-7.3e-05,0.017838,60,0.004593,0.034486,60,0.003767,0.042822
-broad,negative_for_competitors,113,20,113,-0.000857,0.02208,113,-0.00056,0.033525,113,-0.00473,0.039765
-broad,neutral_or_no_clear_effect,1219,312,1201,0.001189,0.02151,1208,0.002166,0.030515,1201,0.001746,0.038051
+sample,outcome,label,label_rows,coef,p_value,nobs,interpretation
+Broad,competitor_abret_spy_t1,industry_news,661,0.006186,0.0036,4433,positive and statistically significant
+Strict,competitor_abret_spy_t1,industry_news,661,0.006227,0.0031,2909,positive and statistically significant
+Broad,competitor_car_abret_spy_1_3,same_direction_contagion,3093,0.01125,0.0381,4433,positive; stronger in strict sample
+Strict,competitor_car_abret_spy_1_3,same_direction_contagion,1760,0.014925,0.0125,2909,positive; stronger in strict sample
+Broad,competitor_abret_spy_t1,opposite_direction_competition,39,0.008086,0.3553,4433,positive sign but sparse and imprecise
+Strict,competitor_abret_spy_t1,opposite_direction_competition,27,0.007211,0.5442,2909,positive sign but sparse and imprecise

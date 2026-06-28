@@ -1,0 +1,4 @@
+sample_definition,rule,panel_rows
+Broad sample,All relevant event-panel rows,4544
+Strict sample,Broad sample excluding market_roundup_but_relevant,2973
+Very strict sample,Strict sample plus materiality >= 3 and confidence >= 4,2273
